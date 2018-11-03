@@ -40,16 +40,19 @@ public class Udsagnslogik {
     public static void main(String[] args) {
 
         String r;
-        String s = "P";
+        String s = "P%(Q%R)";
+        String s2 ="";
 
         for (int row = 0; row < logiskIdentitet().length; row++)
             for (int colomn = 0; colomn < logiskIdentitet()[row].length; colomn++) {
                 String w = logiskIdentitet()[row][colomn];
                 if (s.equals(w)) {
+                    if(colomn==1){
+                    s2 = logiskIdentitet()[row][colomn-1];}
+                    else if(colomn==0) {s2 = logiskIdentitet()[row][colomn+1];}
 
-                    System.out.println("YES, " + s + "=" + w);
-                    System.out.println(logiskIdentitet()[row][colomn]);
-                    System.out.println(row+"and"+colomn);
+                    System.out.println("S blier til, " + s + "=>" +s2);
+
                 }
 
             }
