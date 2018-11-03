@@ -38,23 +38,30 @@ public class Udsagnslogik {
     }
 
     public static void main(String[] args) {
+        System.out.println(enkeltUdtrlyk("0"));
 
-        String r;
-        String s = "P%(Q%R)";
+    }
+
+    public static String enkeltUdtrlyk(String s) {
+
+
+
         String s2 ="";
-
+String p="";
         for (int row = 0; row < logiskIdentitet().length; row++)
             for (int colomn = 0; colomn < logiskIdentitet()[row].length; colomn++) {
                 String w = logiskIdentitet()[row][colomn];
                 if (s.equals(w)) {
                     if(colomn==1){
-                    s2 = logiskIdentitet()[row][colomn-1];}
-                    else if(colomn==0) {s2 = logiskIdentitet()[row][colomn+1];}
+                        s2 = logiskIdentitet()[row][colomn-1];p="<=";}
+                    else if(colomn==0) {s2 = logiskIdentitet()[row][colomn+1];p="=>";}
 
-                    System.out.println("S blier til, " + s + "=>" +s2);
+
+
+                    //System.out.println("S blier til, " + s + " "+p+"" +s2);
 
                 }
 
-            }
+            } return "S blier til, " + s + " "+p+" " +s2;
     }
 }
